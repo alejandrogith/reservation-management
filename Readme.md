@@ -12,11 +12,10 @@ For further reference, please consider the following sections:
 
 
 ### Technology tools
-The following guides illustrate how to use some features concretely:
 * Spring Boot 3
 * Spring Data JPA
 * Spring Web MVC
 * Spring Security 6
 * Java 17
-
+* Maven dependency manager
 
