@@ -1,0 +1,72 @@
+server:
+  port: '7000'
+spring:
+  profiles:
+    active: dev
+
+springdoc:
+  api-docs:
+    enabled: 'true'
+  swagger-ui:
+    enabled: 'true'
+    path: /doc/swagger-ui.html
+jwt:
+  time:
+    expiration: '604800000'
+  secret:
+    key: 76397924423F4528482B4D6251655468576D5A7134743777217A25432A46294A
+
+
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/spring_boot_db?allowPublicKeyRetrieval=true&useSSL=false
+    password: usuario123
+  jpa:
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb;
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      ddl-auto: update
+
+
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+
