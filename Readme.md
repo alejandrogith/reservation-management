@@ -2,7 +2,6 @@
 The following project consists of a Restful Api backend application for booking management.
 
 ### Features
-For further reference, please consider the following sections:
 * Security Management with Authorization and Authentication through Login and Registration using JWT and Spring Security
 * API documentation with Swagger
 * Database management with Spring data JPA
